@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+
+<!-- using if else -->
+
+<!-- <html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script src="script.js"></script>
+
+<script>
+    let expr = "{([])}";
+
+    function areBracketsBalanced(expr) {
+        let stack = [];
+        for (let i = 0; i < expr.length; i++) {
+            let x = expr[i]
+            if (x == "(" || x == "[" || x == "{") {
+                stack.push(x)
+                continue;
+            }
+            // console.log("stack", stack);
+            if (stack.length == 0)
+                return false;
+
+            let check;
+            console.log("check1 ", check);
+            console.log("x ", x);
+
+            if (x == ')') {
+                check = stack.pop()
+                console.log("chec)k ", check);
+
+                if (check == '{' || check == '[') {
+                    return false
+                }
+            }
+            if (x == '}') {
+                check = stack.pop()
+                console.log("chec}k ", check);
+                if (check == '(' || check == '[') {
+                    return false
+                }
+            }
+            if (x == ']') {
+                check = stack.pop()
+                console.log("chec]k ", check);
+                if (check == '(' || check == '{') {
+                    return false
+                }
+            }
+
+        }
+        return (stack.length == 0);
+
+    }
+
+
+    if (areBracketsBalanced(expr))
+        console.log("Balanced ", expr);
+    else
+        console.log("Not Balanced ", expr);
+
+</script>
+
+</html> -->
+
+
+<!-- using swtich case -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<!-- <script src="script.js"></script> -->
+
+<script>
+    let expr = "{([])}";
+
+    function areBracketsBalanced(expr) {
+        let stack = [];
+        for (let i = 0; i < expr.length; i++) {
+            let x = expr[i]
+            if (x == "(" || x == "[" || x == "{") {
+                stack.push(x)
+                continue;
+            }
+            // console.log("stack", stack);
+            if (stack.length == 0)
+                return false;
+
+            let check;
+            console.log("check1 ", check);
+            console.log("x ", x);
+
+            switch (x) {
+                case ')':
+                    check = stack.pop()
+                    console.log("chec)k ", check);
+
+                    if (check == '{' || check == '[') {
+                        return false
+                    }
+                    break
+                case '}':
+                    check = stack.pop()
+                    console.log("chec}k ", check);
+                    if (check == '(' || check == '[') {
+                        return false
+                    }
+                    break
+                case ']':
+                    check = stack.pop()
+                    console.log("chec]k ", check);
+                    if (check == '(' || check == '{') {
+                        return false
+                    }
+                    break
+            }
+
+        }
+        return (stack.length == 0);
+
+    }
+
+
+    if (areBracketsBalanced(expr))
+        console.log("Balanced ", expr);
+    else
+        console.log("Not Balanced ", expr);
+
+</script>
+
+</html>
